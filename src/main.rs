@@ -1,3 +1,5 @@
+use rustprog::library;
+
 fn main() {
-    println!("Hello, world!");
+    println!("{}",library::hello());
 }

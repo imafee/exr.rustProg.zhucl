@@ -48,3 +48,25 @@ pub fn join(){
   println!("{}",s);
   println!("{}",ss);
 }
+
+pub fn len(){
+  let s1 = String::from("A");
+  let s2 = String::from("AA");
+  let s3 = String::from("一二三");
+  println!("{},{},{}",s1.len(),s2.len(),s3.len()); // 1,2,9
+}
+pub fn char(){
+  let s = String::from("123四五六");
+  let bytes = s.bytes();
+  let chars = s.chars();
+
+  for b in bytes{
+    print!("{},",b);
+  }
+  println!("\n");
+  for c in chars{
+    print!("{},",c);
+  }
+  println!("\n");
+  //? 若想在最后一个成员之后打印一个\n，如何获悉
+}

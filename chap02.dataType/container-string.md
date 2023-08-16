@@ -47,11 +47,24 @@ let s3 = str.to_string();
 - 改：replace、replacen 替换
 - 连接："+"操作符只能在字面量种使用，通常使用 format！格式化宏
 
-push 追加、insert 插入,`见/src/chap02/string.rs`
+push 追加、insert 插入,见`/src/chap02/string.rs`
 
 pop 删除最后单字符、remove 删除指定位置的单字符、
 truncate 删除指定范围内的多个字符、clear 删除所有字符.`见/src/chap02/string.rs`
 
-replace、replacen,`见/src/chap02/string.rs`
+replace、replacen,见`/src/chap02/string.rs`
 
 连接：字面量的连接、format!宏的使用.`见/src/chap02/string.rs`
+
+## 字符串的访问
+
+- 字符串是 UTF-8 编码的字节序列，所以不能直接使用索引来访问字符
+- 字符串操作可以分为按字节处理、按字符操作
+  - bytes 方法返回按字节迭代的迭代器
+  - chars 方法返回按字符迭代的迭代器
+
+使用 len 方法获取字符串的长度
+见`/src/chap02/string.rs`的 len
+
+使用迭代器访问字符串的字符
+见`/src/chap02/string.rs`的 char

@@ -1,14 +1,16 @@
 # Primitive types
 
+TOC
+
 参考：
 https://doc.rust-lang.org/book/ch03-02-data-types.html
 https://doc.rust-lang.org/reference/types.html
 
-- Numeric
-  - Integer
-  - Floating-Point
-- Boolean
-- char
+- Numeric （数值）
+  - Integer 整数型
+  - Floating-Point 浮点型
+- Boolean 布尔型
+- Char 字符型
 - Never 任意值类型，使用!符号表示
 
 ## Integer 整型
@@ -16,7 +18,7 @@ https://doc.rust-lang.org/reference/types.html
 - 无符号整数(unsigned integer)，简写为 u
 - 有符号整数(signed integer),简写为 i
 
-按照信息的可存储长度，整型被细分设计为：
+整型数据的可存储长度
 
 <!--prettier-ignore-->
 |Byte长度(n)|bit长度(8*n)|有符号表示|无符号表示|
@@ -25,7 +27,7 @@ https://doc.rust-lang.org/reference/types.html
 2|16|i16|u16
 4|32|i32(rust默认)|u32
 8|64|i64|u64
-16|128|i138|u128
+16|128|i128|u128
 arch|arch|isize|usize
 
 注
@@ -46,18 +48,19 @@ isize 和 usize 表示：系统是多少位，bit 长度就是多少。
 // 显式声明值类型
 let integer0:usize = 1;
 let integer1:u32 = 1;
-let integer2 = 1u32;
+let integer2 = 1u32; // 后缀指明类型
 // 隐式声明值类型
-let integer3 = 1; // i32
+let integer3 = 1; // i32，默认
 // 数值的可读性写法
 let integer4 = 10_000; // _叫做可读性分隔符，编译器最终会把它去掉，实际数值是10000
 // 进制数值的表示法
-let integer_binary:u32 = 0b10; // 2
-let integer_octal:u32 = 0o10; // 8
-let integer_hexadecimal:u32 = 0x10; // 16
+let integer_binary:u32 = 0b10; // 2进制
+let integer_octal:u32 = 0o10; // 8进制
+let integer_hexadecimal:u32 = 0x10; // 16进制
 ```
 
-值类型对应的值范围，公式如下(设字节长度为 n,则 bit 长度为 8n，计作 m)
+值类型对应的数值范围，公式如下
+(设字节长度为 n。则 bit 长度为 8n，计作 m)
 
 - 无符号：[0,2^m-1]
 - 有符号：[-2^(m-1),2^(m-1)-1]
@@ -95,7 +98,7 @@ let float3 = 1.1; // f64
 let float4 = 11_000.222_333_444
 ```
 
-???IEEE 754 的具体算法
+?了解：IEEE 754 的具体算法
 
 ## 布尔类型
 
@@ -127,10 +130,10 @@ let x: ! = abc!();
 let y: i32 = x;
 ```
 
-## 范围类型?
+## ?范围类型?
 
-？？官网文档中并没有发现
-表示的是一个序列，有 2 种形式：
+官网文档中并没有发现此类数据类型！
+字面量表示的是一个整数序列，有 2 种形式：
 
 - 左闭右开，比如(1..5)
 - 全闭,比如(1..=5)

@@ -1,56 +1,25 @@
-# data structure
+# chapter 02
+
+## 变量命名
+
+[variable](./variable.md)
+
+## data type
 
 Rust 中每一个值都属于某一个 数据类型（data type），以便明确数据处理方式。
-数据类型既可以这样划分为两个子集：[The Rust Programming Language](https://doc.rust-lang.org/book/ch03-02-data-types.html)
 
-- 标量（scalar）
-- 复合（compound）
+官网中数据类型有两种分类办法：
 
-也可以这样划分：[The Rust Reference](https://doc.rust-lang.org/reference/types.html)
+- [The Rust Programming Language](https://doc.rust-lang.org/book/ch03-02-data-types.html)
 
-Primitive types:
+  - 标量（scalar）
+  - 复合（compound）
 
-```
-Boolean — bool
-Numeric — integer and float
-Textual — char and str
-Never — ! — a type with no values
-```
+- [The Rust Reference](https://doc.rust-lang.org/reference/types.html)
 
-Sequence types:
+结合书籍和官网文档，我将数据类型分类为
 
-```
-Tuple
-Array
-Slice
-```
-
-User-defined types:
-
-```
-Struct
-Enum
-Union
-```
-
-Function types:
-
-```
-Functions
-Closures
-```
-
-Pointer types:
-
-```
-References
-Raw pointers
-Function pointers
-```
-
-Trait types:
-
-```
-Trait objects
-Impl trait
-```
+- [标量类型 scalar](./primitiveType.md)
+- [复合类型 compound](./compoundType.md)
+- [容器类型 container](./container-std.md)
+  - [特殊容器类型-字符串](./container-string.md)
